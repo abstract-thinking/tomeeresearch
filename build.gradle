@@ -1,0 +1,19 @@
+buildscript {
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'org.apache.tomee.gradle:tomee-embedded:7.1.4'
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'org.apache.tomee.tomee-embedded'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
