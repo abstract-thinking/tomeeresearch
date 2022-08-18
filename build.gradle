@@ -9,11 +9,69 @@ buildscript {
     }
 }
 
+apply plugin: 'org.apache.tomee.tomee-embedded'
 apply plugin: 'java'
 apply plugin: 'war'
-apply plugin: 'org.apache.tomee.tomee-embedded'
+
+sourceCompatibility = 1.8
 
 repositories {
     mavenLocal()
     mavenCentral()
 }
+
+dependencies {
+    providedCompile 'org.apache.tomee:javaee-api:7.0-2'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.9.0'
+    testImplementation 'org.assertj:assertj-core:3.23.1'
+    testImplementation 'org.apache.tomee:openejb-cxf:7.1.4'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+def tomeeEmbedded = extensions.getByName('tomee-embedded')
+println('GAGA')
+
+println(tomeeEmbedded.skipDefaultRepository)
+println(tomeeEmbedded.tomeeVersion)
+
+// shared with the task
+println(tomeeEmbedded.httpPort)
+println(tomeeEmbedded.httpsPort)
+println(tomeeEmbedded.ajpPort)
+println(tomeeEmbedded.stopPort)
+println(tomeeEmbedded.host)
+println(tomeeEmbedded.keystoreFile)
+println(tomeeEmbedded.keystorePass)
+println(tomeeEmbedded.keystoreType)
+println(tomeeEmbedded.clientAuth)
+println(tomeeEmbedded.keyAlias)
+println(tomeeEmbedded.sslProtocol)
+println(tomeeEmbedded.serverXml)
+println(tomeeEmbedded.singleClassloader)
+println(tomeeEmbedded.ssl)
+println(tomeeEmbedded.withEjbRemote)
+println(tomeeEmbedded.quickSession)
+println(tomeeEmbedded.skipHttp)
+println(tomeeEmbedded.applicationScopes)
+println(tomeeEmbedded.classloaderFilteredPackages)
+println(tomeeEmbedded.webResourceCached)
+println(tomeeEmbedded.context)
+println(tomeeEmbedded.containerProperties)
+println(tomeeEmbedded.keepServerXmlAsThis)
+println(tomeeEmbedded.users)
+println(tomeeEmbedded.roles)
+println(tomeeEmbedded.forceJspDevelopment)
+println(tomeeEmbedded.inlinedServerXml)
+println(tomeeEmbedded.inlinedTomEEXml)
+println(tomeeEmbedded.workDir)
+println(tomeeEmbedded.modules)
+println(tomeeEmbedded.customWebResources)
+println(tomeeEmbedded.docBase)
+println(tomeeEmbedded.dir)
+println(tomeeEmbedded.conf)
+println('GAGA')

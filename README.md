@@ -9,3 +9,6 @@ https://rmannibucau.metawerx.net/tomee-embedded-gradle-plugin.html
 https://stackoverflow.com/questions/41842616/gradle-plugin-tomee-embedded-dependency-for-tomee-error
 
 # Setup a WebService
+
+Next step get the WebService to run with annotations
+Use database as resource with HSQLDB
